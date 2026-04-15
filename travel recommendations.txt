@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel</title>
+</head>
+
+<body style="font-family:Arial;text-align:center;">
+
+<div id="login">
+<h2>Login</h2>
+<input id="u" placeholder="username"><br><br>
+<input id="p" type="password" placeholder="password"><br><br>
+<button onclick="login()">Login</button>
+<p id="msg"></p>
+</div>
+
+<div id="main" style="display:none;">
+<h2>Travel Recommendation</h2>
+<input id="city" placeholder="Enter city"><br><br>
+<button onclick="search()">Search</button>
+<div id="result"></div>
+</div>
+
+<script>
+function login(){
+var u=document.getElementById("u").value.trim();
+var p=document.getElementById("p").value.trim();
+
+if(u=="admin" && p=="1234"){
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.display="block";
+}else{
+document.getElementById("msg").innerHTML="Wrong login";
+}
+}
+
+function search(){
+var c=document.getElementById("city").value.trim().toLowerCase();
+
+if(c=="chennai"){
+document.getElementById("result").innerHTML="🍜 Food: Dosa<br>🏛️ Place: Marina Beach<br>🏨 Hotel: Taj";
+}
+else if(c=="madurai"){
+document.getElementById("result").innerHTML="🍜 Food: Jigarthanda<br>🏛️ Place: Meenakshi Temple<br>🏨 Hotel: Heritage";
+}
+else if(c=="coimbatore"){
+document.getElementById("result").innerHTML="🍜 Food: Meals<br>🏛️ Place: Isha<br>🏨 Hotel: Vivanta";
+}
+else{
+document.getElementById("result").innerHTML="No data found";
+}
+}
+</script>
+
+</body>
+</html>
